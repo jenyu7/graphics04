@@ -93,21 +93,6 @@ void ident(struct matrix *m) {
 }//end ident
 
 
-/*-------------- void scalar_mult() --------------
-Inputs:  double x
-         struct matrix *m 
-Returns: 
-
-multiply each element of m by x
-*/
-void scalar_mult(double x, struct matrix *m) {  
-  int r, c;
-  for (r=0; r < m->rows; r++)
-    for (c=0; c < m->lastcol; c++) 
-      m->m[r][c] *= x;
-}//end scalar_mult
-
-
 /*-------------- void matrix_mult() --------------
 Inputs:  struct matrix *a
          struct matrix *b 

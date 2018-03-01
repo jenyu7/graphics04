@@ -25,9 +25,10 @@ line
 display
 ident
 scale
-1.5 1.5 1.5
+2 2 2
 apply
 display
+ident
 move
 100 100 0
 apply
@@ -38,12 +39,12 @@ z 20
 rotate
 x 20
 rotate
-y -20
+y 20
 apply
 display
 ident
 rotate
-y -20
+y 20
 apply
 display
 save
