@@ -17,6 +17,7 @@ struct matrix * make_rotZ(double theta);
 
 //Basic matrix manipulation routines
 struct matrix *new_matrix(int rows, int cols);
+void add_pointw( struct matrix * points, double x, double y, double z, double w);
 void free_matrix(struct matrix *m);
 void grow_matrix(struct matrix *m, int newcols);
 void copy_matrix(struct matrix *a, struct matrix *b);
