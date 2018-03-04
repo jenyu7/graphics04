@@ -9,7 +9,8 @@
 #include "matrix.h"
 #include "parser.h"
 
-//FUNCTIONS FROM SHELL PROJECT IN SYSTEMS
+//FUNCTION FROM SHELL PROJECT IN SYSTEMS
+//added conversion to double functionality
 
 /*======== char ** parse_args() ==========
   Inputs: char * line, char * delim
@@ -31,23 +32,6 @@ double * parse_args( char * line, char * delim){
   }
   args[n] = 0;
   return args;
-}
-
-
-
-/*======== char* trim() ==========
-  Inputs: char * c
-  Returns: Pointer to beginning of string (w/o spaces)
-  Removes the spaces in front of and behind a string.
-  *c removes spaces from the front.
-  *e removes from back, and ensures null termination.
-  isspace() function used to check if pointing to space.
-  ================================*/
-char * trim(char *c) {
-  char * e = c + strlen(c) - 1;
-  while(*c && isspace(*c)) c++;
-  while(e > c && isspace(*e)) *e-- = '\0';
-  return c;
 }
 
 
@@ -140,7 +124,7 @@ void parse_file ( char * filename,
       fgets(line, 255, f);
       line[strlen(line)-1] = '\0';
       printf("rotate line: %s\n", line);
-      char * cpy = &line;
+      char * cpy = line;
       char * axis = strsep(&cpy, " ");
       if(!strcmp(axis, "x")){
 	tmp = make_rotX(atof(cpy));
@@ -155,7 +139,6 @@ void parse_file ( char * filename,
 	printf("Invalid axis inputted.\n");
       }
       matrix_mult(tmp, transform);
-      //free(args);
       free(tmp);
     }
     // apply: apply the current transformation matrix to the edge matrix
