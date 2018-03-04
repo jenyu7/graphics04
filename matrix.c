@@ -15,11 +15,11 @@ Returns:
 adds point (x, y, z, w) to points and increment points.lastcol
 usage does not require growing
 ====================*/
-void add_pointw(struct matrix * p, double x, double y, double z, double w){
-  points->m[0][ p->lastcol ] = x;
-  points->m[1][ p->lastcol ] = y;
-  points->m[2][ p->lastcol ] = z;
-  points->m[3][ p->lastcol ] = w;
+void add_pointw(struct matrix * points, double x, double y, double z, double w){
+  points->m[0][points->lastcol ] = x;
+  points->m[1][points->lastcol ] = y;
+  points->m[2][points->lastcol ] = z;
+  points->m[3][points->lastcol ] = w;
   points->lastcol++;
 }
 
