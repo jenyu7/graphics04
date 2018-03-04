@@ -106,7 +106,7 @@ void parse_file ( char * filename,
       then multiply the transform matrix by the translation matrix - 
       takes 3 arguments (tx, ty, tz)
     */
-    else if(!strcmp(line, "translate")){
+    else if(!strcmp(line, "move")){
       fgets(line, 255, f);
       line[strlen(line)-1] = '\0';
       args = parse_args(line, " ");
