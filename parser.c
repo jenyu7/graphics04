@@ -161,9 +161,9 @@ void parse_file ( char * filename,
       takes 1 argument (file name)
     */
     else if(!strcmp(line, "display")){
+      clear_screen(s);
       draw_lines(edges, s, c);
       display(s);
-      clear_screen(s);
     }
     //quit: end parsing
     else if(!strcmp(line, "quit")){
